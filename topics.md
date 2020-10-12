@@ -24,3 +24,6 @@
 			* 檔案之間的間隔處理
 	* 如何抓到目前撥放的進度 -- dbus
 		* 使用 dbuscontrol.sh
+* 開機後自動啟動程式的方法
+	* 透過 systemd
+	* 透過 rc.local
