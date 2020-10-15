@@ -1,6 +1,6 @@
 '''
 Control the Brightness of LED using PWM on Raspberry Pi
-http://www.electronicwings.com
+Ref: http://www.electronicwings.com
 '''
 
 import sys

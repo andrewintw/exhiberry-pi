@@ -52,5 +52,4 @@ EOF
 	esac
 }
 
-
 do_main

@@ -4,9 +4,9 @@ GPIO_PIN=23
 PWM_OFF=0
 PWM_ON=500
 
-VIDEOPATH="/home/pi/Desktop/tz"
-VIDEO_A_PATH=$VIDEOPATH/A.mp4
-VIDEO_B_PATH=$VIDEOPATH/B.mp4
+VIDEOPATH="/home/pi/Desktop/a_maidens_prayer_1010_A+B"
+VIDEO_A_PATH=$VIDEOPATH/a_maidens_prayer_1010-partA.mp4
+VIDEO_B_PATH=$VIDEOPATH/a_maidens_prayer_1010-partB.mp4
 
 light_on () {
 	$DO gpio mode $GPIO_PIN  PWM
@@ -36,17 +36,14 @@ do_main () {
 		for videos in $VIDEOPATH/*
 		do
 			if [ "$videos" = "$VIDEO_A_PATH" ]; then
-				/home/pi/blink_ctrl.sh blink-on &
-				#light_on
+				light_on
 			else
-				/home/pi/blink_ctrl.sh blink-off &
-				#light_off
+				light_off
 			fi
-			xterm -fullscreen -fg white -bg black -e omxplayer -o local -r "$videos" >/dev/null
+			xterm -fullscreen -fg white -bg black -e omxplayer -o hdmi -r "$videos" >/dev/null
 			xrefresh -display :0
 		done
 	done
 }
-
 
 do_main
